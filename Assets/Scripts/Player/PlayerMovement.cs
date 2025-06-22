@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (movementUnlocked)
+        if (movementUnlocked && !PlayerKnockBack.GetKnockedBack())
             Move();
     }
 
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         return direction;
     }
 
-    public Vector2 GetVetDirection()
+    public Vector2 GetVectorDirection()
     {
         switch (direction)
         {

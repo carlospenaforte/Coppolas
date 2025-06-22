@@ -5,7 +5,6 @@ public abstract class PlayerAttack : MonoBehaviour
     public int damage, knockBackForce;
     public float attackTime, attackRadius;
     public PlayerMovement mov;
-    public PlayerKnockBack pkb;
     public Animator anim;
     public Rigidbody2D rb;
 
@@ -21,7 +20,7 @@ public abstract class PlayerAttack : MonoBehaviour
 
     protected void Update()
     {
-        if (timer <= 0f && controls.IsAttacking() && !pkb.GetKnockedBack())
+        if (timer <= 0f && controls.IsAttacking() && !PlayerKnockBack.GetKnockedBack())
         {
             rb.linearVelocity = Vector2.zero;
             timer = attackTime;

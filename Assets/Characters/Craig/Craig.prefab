@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5913875404933167293}
   - component: {fileID: 4555694154433664930}
+  - component: {fileID: 7570258744514708731}
+  - component: {fileID: 420165727953893947}
+  - component: {fileID: 4136143978140431451}
   - component: {fileID: 7133402254156202773}
   - component: {fileID: 2564881631150130298}
   - component: {fileID: 7462222761789736444}
@@ -48,9 +51,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68fd1cba2f66894eb2bf679c3b68491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
   rb: {fileID: 2564881631150130298}
   anim: {fileID: 3977780490798296373}
+--- !u!114 &7570258744514708731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4070060917153669517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7a9c6bb2d63e6943bf6c92e8b7b591b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockBackTime: 0.25
+  rb: {fileID: 2564881631150130298}
+  anim: {fileID: 3977780490798296373}
+--- !u!114 &420165727953893947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4070060917153669517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7af33f1f7c085743b9d12c2d262206e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
+--- !u!114 &4136143978140431451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4070060917153669517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a0e990534a885649825c554c79beec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  knockBackForce: 30
+  attackTime: 0.5
+  attackRadius: 1.25
+  mov: {fileID: 4555694154433664930}
+  anim: {fileID: 3977780490798296373}
+  rb: {fileID: 2564881631150130298}
+  bulletLifeTime: 3
+  prefabBullet: {fileID: 2970883072602099155, guid: dbf7543d26b134a418b3d13685e07223, type: 3}
 --- !u!212 &7133402254156202773
 SpriteRenderer:
   m_ObjectHideFlags: 0

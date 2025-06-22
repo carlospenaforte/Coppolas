@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerKnockBack : MonoBehaviour
 {
-    private bool knockedBack = false;
+    private static bool knockedBack = false;
     private float timer = 0f;
     public float knockBackTime;
     public Rigidbody2D rb;
@@ -31,7 +31,7 @@ public class PlayerKnockBack : MonoBehaviour
         knockedBack = true;
     }
 
-    public bool GetKnockedBack()
+    public static bool GetKnockedBack()
     {
         return knockedBack;
     }
