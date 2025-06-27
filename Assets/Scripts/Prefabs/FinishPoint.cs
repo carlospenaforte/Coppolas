@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class FinishPoint : MonoBehaviour
 {
-    public float x, y;
+    public float x = 0f, y = 0f;
     public string sceneName;
     public GameObject player;
 
-    private static float newX, newY;
+    private static float newX = 0f, newY = 0f;
 
     private void Awake()
     {
