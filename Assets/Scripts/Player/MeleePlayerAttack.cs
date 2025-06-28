@@ -11,7 +11,7 @@ public class MeleePlayerAttack : PlayerAttack
         {
             if (Vector2.Distance(enemy.transform.position, transform.position) <= attackRadius)
             {
-                enemy.GetComponent<EnemyKnockBack>().KnockBack(knockBackForce);
+                //enemy.GetComponent<EnemyKnockBack>().KnockBack(knockBackForce);
                 enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
             }
 

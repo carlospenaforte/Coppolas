@@ -34,8 +34,11 @@ public class DialogueParser
 
         for (int i = 0; i < length; i++)
         {
-            characters[i] = data.entries[i].character.ToUpper();
+            characters[i] = data.entries[i].character;
             scripts[i] = data.entries[i].script;
+
+            if (characters[i] != "")
+                characters[i] = characters[i].ToUpper() + ": ";
         }
     }
 

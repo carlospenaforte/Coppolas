@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 0169b2ea6e2d29643a9110fa4e895e1e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4418597995099237973
+    second: RedRobot_0
+  - first:
+      213: 3646464036240041190
+    second: RedRobot_1
+  - first:
+      213: -6588775990572671144
+    second: RedRobot_2
+  - first:
+      213: -4447688098677323421
+    second: RedRobot_3
+  - first:
+      213: -468409230391859608
+    second: RedRobot_4
+  - first:
+      213: -1111065391860467974
+    second: RedRobot_5
+  - first:
+      213: 4049896881557176808
+    second: RedRobot_6
+  - first:
+      213: -975511476614994781
+    second: RedRobot_7
+  - first:
+      213: -4705121078333684202
+    second: RedRobot_8
+  - first:
+      213: 3651097447928340048
+    second: RedRobot_9
+  - first:
+      213: 4979523036788855787
+    second: RedRobot_10
+  - first:
+      213: 3254908489939018909
+    second: RedRobot_11
+  - first:
+      213: 8701083195882878577
+    second: RedRobot_12
+  - first:
+      213: 1658474522973537943
+    second: RedRobot_13
+  - first:
+      213: -438846089730607658
+    second: RedRobot_14
+  - first:
+      213: 1234863601034722211
+    second: RedRobot_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RedRobot_0
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 377
+        width: 38
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ea42f3773025d30800000000000000
+      internalID: 4418597995099237973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 381
+        width: 79
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4235e98b7da9230800000000000000
+      internalID: 3646464036240041190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_2
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 385
+        width: 51
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f1b493527ff84a0800000000000000
+      internalID: -6588775990572671144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_3
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 383
+        width: 69
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3690b963d33a642c0800000000000000
+      internalID: -4447688098677323421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_4
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 253
+        width: 66
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866aaf46940ef79f0800000000000000
+      internalID: -468409230391859608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_5
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 258
+        width: 70
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af63deba9e3b490f0800000000000000
+      internalID: -1111065391860467974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_6
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 255
+        width: 62
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e18d2aa1cf143830800000000000000
+      internalID: 4049896881557176808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 249
+        width: 67
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4eb020b794672f0800000000000000
+      internalID: -975511476614994781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_8
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 128
+        width: 66
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616c7bcde4d04beb0800000000000000
+      internalID: -4705121078333684202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_9
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 133
+        width: 69
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e9a18d8cd4ba230800000000000000
+      internalID: 3651097447928340048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_10
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 135
+        width: 64
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be39caeb1d1da1540800000000000000
+      internalID: 4979523036788855787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_11
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 131
+        width: 67
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94e73fb602cb2d20800000000000000
+      internalID: 3254908489939018909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_12
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 6
+        width: 43
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17638bbf01570c870800000000000000
+      internalID: 8701083195882878577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_13
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 9
+        width: 82
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7968fdaaac5140710800000000000000
+      internalID: 1658474522973537943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_14
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 10
+        width: 59
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d5b9867ec7e8e9f0800000000000000
+      internalID: -438846089730607658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedRobot_15
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 7
+        width: 70
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3abfbbd07ed132110800000000000000
+      internalID: 1234863601034722211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RedRobot_0: 4418597995099237973
+      RedRobot_1: 3646464036240041190
+      RedRobot_10: 4979523036788855787
+      RedRobot_11: 3254908489939018909
+      RedRobot_12: 8701083195882878577
+      RedRobot_13: 1658474522973537943
+      RedRobot_14: -438846089730607658
+      RedRobot_15: 1234863601034722211
+      RedRobot_2: -6588775990572671144
+      RedRobot_3: -4447688098677323421
+      RedRobot_4: -468409230391859608
+      RedRobot_5: -1111065391860467974
+      RedRobot_6: 4049896881557176808
+      RedRobot_7: -975511476614994781
+      RedRobot_8: -4705121078333684202
+      RedRobot_9: 3651097447928340048
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

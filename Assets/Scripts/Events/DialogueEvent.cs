@@ -13,7 +13,7 @@ public abstract class DialogueEvent : Event
 
     protected abstract void Talk();
 
-    protected void Start()
+    protected virtual void Start()
     {
         DialogueParser.LoadFromResources("Dialogues/" + directory);
         characters = DialogueParser.GetCharacters();

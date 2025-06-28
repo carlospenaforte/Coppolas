@@ -1,0 +1,16 @@
+{
+    "entries": [
+        {
+            "character": "",
+            "script": "Use Enter para interagir com o cenário e caixas de texto"
+        },
+        {
+            "character": "",
+            "script": "Utilize as setas do teclado ou WASD para mover o personagem, e segure Shift para correr."
+        },
+        {
+            "character": "",
+            "script": "Ao digitar um código Python, pressione Enter uma vez para saltar uma linha e duas vezes rapidamente para finalizar a digitação."
+        }
+    ]
+}
