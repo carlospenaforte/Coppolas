@@ -135,6 +135,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActivateAlmanac"",
+                    ""type"": ""Button"",
+                    ""id"": ""8a1643ef-c249-4d74-9bf1-7b92b7bd85e2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -305,12 +314,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""987c5e46-5a8f-4821-808e-23a93decccdf"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""915966b7-dc5c-4608-ab36-132390ecda77"",
                     ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ActivateEvent"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a69545c3-6d6d-4497-b449-122f95aba76d"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActivateAlmanac"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -343,6 +374,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Almanac"",
+            ""id"": ""03572d93-73cb-4156-b54e-b0ed250eeba6"",
+            ""actions"": [
+                {
+                    ""name"": ""CloseAlmanac"",
+                    ""type"": ""Button"",
+                    ""id"": ""c9602967-e87e-4844-8481-490d668dd4df"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""684c251d-18d1-42ab-9d3d-b4d75e0da175"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseAlmanac"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -354,15 +413,20 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Gameplay_InputY = m_Gameplay.FindAction("InputY", throwIfNotFound: true);
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_ActivateEvent = m_Gameplay.FindAction("ActivateEvent", throwIfNotFound: true);
+        m_Gameplay_ActivateAlmanac = m_Gameplay.FindAction("ActivateAlmanac", throwIfNotFound: true);
         // Event
         m_Event = asset.FindActionMap("Event", throwIfNotFound: true);
         m_Event_Interact = m_Event.FindAction("Interact", throwIfNotFound: true);
+        // Almanac
+        m_Almanac = asset.FindActionMap("Almanac", throwIfNotFound: true);
+        m_Almanac_CloseAlmanac = m_Almanac.FindAction("CloseAlmanac", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
     {
         UnityEngine.Debug.Assert(!m_Gameplay.enabled, "This will cause a leak and performance issues, PlayerControls.Gameplay.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_Event.enabled, "This will cause a leak and performance issues, PlayerControls.Event.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Almanac.enabled, "This will cause a leak and performance issues, PlayerControls.Almanac.Disable() has not been called.");
     }
 
     /// <summary>
@@ -443,6 +507,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_InputY;
     private readonly InputAction m_Gameplay_Attack;
     private readonly InputAction m_Gameplay_ActivateEvent;
+    private readonly InputAction m_Gameplay_ActivateAlmanac;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
     /// </summary>
@@ -474,6 +539,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/ActivateEvent".
         /// </summary>
         public InputAction @ActivateEvent => m_Wrapper.m_Gameplay_ActivateEvent;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/ActivateAlmanac".
+        /// </summary>
+        public InputAction @ActivateAlmanac => m_Wrapper.m_Gameplay_ActivateAlmanac;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -515,6 +584,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ActivateEvent.started += instance.OnActivateEvent;
             @ActivateEvent.performed += instance.OnActivateEvent;
             @ActivateEvent.canceled += instance.OnActivateEvent;
+            @ActivateAlmanac.started += instance.OnActivateAlmanac;
+            @ActivateAlmanac.performed += instance.OnActivateAlmanac;
+            @ActivateAlmanac.canceled += instance.OnActivateAlmanac;
         }
 
         /// <summary>
@@ -541,6 +613,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ActivateEvent.started -= instance.OnActivateEvent;
             @ActivateEvent.performed -= instance.OnActivateEvent;
             @ActivateEvent.canceled -= instance.OnActivateEvent;
+            @ActivateAlmanac.started -= instance.OnActivateAlmanac;
+            @ActivateAlmanac.performed -= instance.OnActivateAlmanac;
+            @ActivateAlmanac.canceled -= instance.OnActivateAlmanac;
         }
 
         /// <summary>
@@ -670,6 +745,102 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="EventActions" /> instance referencing this action map.
     /// </summary>
     public EventActions @Event => new EventActions(this);
+
+    // Almanac
+    private readonly InputActionMap m_Almanac;
+    private List<IAlmanacActions> m_AlmanacActionsCallbackInterfaces = new List<IAlmanacActions>();
+    private readonly InputAction m_Almanac_CloseAlmanac;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "Almanac".
+    /// </summary>
+    public struct AlmanacActions
+    {
+        private @PlayerControls m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public AlmanacActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "Almanac/CloseAlmanac".
+        /// </summary>
+        public InputAction @CloseAlmanac => m_Wrapper.m_Almanac_CloseAlmanac;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_Almanac; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="AlmanacActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(AlmanacActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="AlmanacActions" />
+        public void AddCallbacks(IAlmanacActions instance)
+        {
+            if (instance == null || m_Wrapper.m_AlmanacActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_AlmanacActionsCallbackInterfaces.Add(instance);
+            @CloseAlmanac.started += instance.OnCloseAlmanac;
+            @CloseAlmanac.performed += instance.OnCloseAlmanac;
+            @CloseAlmanac.canceled += instance.OnCloseAlmanac;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="AlmanacActions" />
+        private void UnregisterCallbacks(IAlmanacActions instance)
+        {
+            @CloseAlmanac.started -= instance.OnCloseAlmanac;
+            @CloseAlmanac.performed -= instance.OnCloseAlmanac;
+            @CloseAlmanac.canceled -= instance.OnCloseAlmanac;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="AlmanacActions.UnregisterCallbacks(IAlmanacActions)" />.
+        /// </summary>
+        /// <seealso cref="AlmanacActions.UnregisterCallbacks(IAlmanacActions)" />
+        public void RemoveCallbacks(IAlmanacActions instance)
+        {
+            if (m_Wrapper.m_AlmanacActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="AlmanacActions.AddCallbacks(IAlmanacActions)" />
+        /// <seealso cref="AlmanacActions.RemoveCallbacks(IAlmanacActions)" />
+        /// <seealso cref="AlmanacActions.UnregisterCallbacks(IAlmanacActions)" />
+        public void SetCallbacks(IAlmanacActions instance)
+        {
+            foreach (var item in m_Wrapper.m_AlmanacActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_AlmanacActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="AlmanacActions" /> instance referencing this action map.
+    /// </summary>
+    public AlmanacActions @Almanac => new AlmanacActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Gameplay" which allows adding and removing callbacks.
     /// </summary>
@@ -712,6 +883,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnActivateEvent(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ActivateAlmanac" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnActivateAlmanac(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Event" which allows adding and removing callbacks.
@@ -727,5 +905,20 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInteract(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Almanac" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="AlmanacActions.AddCallbacks(IAlmanacActions)" />
+    /// <seealso cref="AlmanacActions.RemoveCallbacks(IAlmanacActions)" />
+    public interface IAlmanacActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "CloseAlmanac" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCloseAlmanac(InputAction.CallbackContext context);
     }
 }

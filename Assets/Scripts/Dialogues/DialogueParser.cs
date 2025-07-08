@@ -20,6 +20,7 @@ public class DialogueParser
     public static void LoadFromResources(string resourcePath)
     {
         TextAsset jsonFile = Resources.Load<TextAsset>(resourcePath);
+
         if (jsonFile == null)
         {
             Debug.LogError($"Arquivo JSON não encontrado em Resources/{resourcePath}.json");
@@ -34,11 +35,8 @@ public class DialogueParser
 
         for (int i = 0; i < length; i++)
         {
-            characters[i] = data.entries[i].character;
+            characters[i] = data.entries[i].character.ToUpper() + ": ";
             scripts[i] = data.entries[i].script;
-
-            if (characters[i] != "")
-                characters[i] = characters[i].ToUpper() + ": ";
         }
     }
 

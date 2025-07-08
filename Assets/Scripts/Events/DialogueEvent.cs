@@ -13,15 +13,16 @@ public abstract class DialogueEvent : Event
 
     protected abstract void Talk();
 
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
+
         DialogueParser.LoadFromResources("Dialogues/" + directory);
         characters = DialogueParser.GetCharacters();
         scripts = DialogueParser.GetScripts();
         limit = characters.Length;
 
-        talkTime = 0.25f;
-        controls = InputManager.GetInstance();
+        talkTime = 1f;
         box = Instantiate(dialogueBoxPrefab);
         box.SetActive(false);
         dialogue = box.GetComponentInChildren<TextMeshProUGUI>();
@@ -29,7 +30,7 @@ public abstract class DialogueEvent : Event
 
     protected void Update()
     {
-        if (playerInside && (controls.ActivateEvent() || controls.IsInteracting()) && timer <= 0f)
+        if (playerInside && (controls.ActivateEvent() || controls.IsInteracting()) && timer <= 0f || activateEvent)
             Talk();
         else
             timer -= Time.deltaTime;

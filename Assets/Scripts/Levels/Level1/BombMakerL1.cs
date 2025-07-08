@@ -66,6 +66,11 @@ public class BombMakerL1 : InputEvent
         return false;
     }
 
+    protected override void ResetVariables()
+    {
+        bombMaked = false;
+    }
+
     protected override string PrintMessage()
     {
         return "Bomba fabricada!";

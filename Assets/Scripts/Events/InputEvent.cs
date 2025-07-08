@@ -16,11 +16,12 @@ public abstract class InputEvent : Event
     protected abstract string PrintMessage();
     protected abstract string GetExpectedText();
 
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
+
         talkTime = 0.1f;
         expectedText = GetExpectedText();
-        controls = InputManager.GetInstance();
         inputBox = Instantiate(inputBoxPrefab);
         inputField = inputBox.GetComponentInChildren<TMP_InputField>();
         inputBox.SetActive(false);
@@ -28,9 +29,10 @@ public abstract class InputEvent : Event
 
     protected virtual void Update()
     {
-        if (playerInside && controls.ActivateEvent() && timer <= 0f)
+        if (playerInside && controls.ActivateEvent() && timer <= 0f || activateEvent)
         {
             enterMode = true;
+            activateEvent = false;
             timer = talkTime;
             controls.Enable("event");
             inputBox.SetActive(true);

@@ -5,8 +5,9 @@ public class TablePapersL1 : TextEvent
     private static int[] code = new int[4];
     private string text;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         text = GetText1() + GetText2() + GetText3() + GetText4();
     }
 

@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class FileUnforgivenL2 : InputEvent
 {
-    private string[] fileObjects = { null, "" };
+    private string[] fileObjects = new string[2];
 
     protected override string AdjustText(string text)
     {
         string[] lines = text.Split('\n').Where(line => !string.IsNullOrWhiteSpace(line)).ToArray();
+
+        fileObjects[0] = "φ";
+        fileObjects[1] = "π";
 
         if (CheckCorrectFormatting(lines))
         {

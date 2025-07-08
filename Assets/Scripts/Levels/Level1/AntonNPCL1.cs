@@ -4,16 +4,18 @@ public class AntonNPCL1 : TextEvent
 {
     private static int[] coordinates = { 1, 1, 1 };
     private static string[] direction = new string[3];
-    private static string[][] matrix = new string[][]
+    private string[][] matrix = new string[][]
     {
         new string[] { "direita", "esquerda" },
         new string[] { "cima", "baixo" },
         new string[] { "frente", "trás" }
     };
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (coordinates[0] == 1 && coordinates[1] == 1 && coordinates[2] == 1)
+        base.Awake();
+
+        if (coordinates[1] == 1)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -24,6 +26,11 @@ public class AntonNPCL1 : TextEvent
                 direction[i] = coordinates[i] > 0 ? matrix[i][0] : matrix[i][1];
             }
         }
+    }
+
+    protected override void ResetVariables()
+    {
+        coordinates[1] = 1;
     }
 
     protected override string GetDialogueText()

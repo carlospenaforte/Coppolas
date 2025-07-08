@@ -15,6 +15,14 @@ public class CodeShipL1 : InputEvent
         expectedText = $"defmover_nave():returnx,y,zx={coordinates[0]}y={coordinates[1]}z={coordinates[2]}";
     }
 
+    protected override void FinishEvent()
+    {
+        base.FinishEvent();
+
+        if (acepted)
+            Application.Quit();
+    }
+
     protected override string AdjustText(string text)
     {
         string[] lines = text.Split('\n').Where(line => !string.IsNullOrWhiteSpace(line)).ToArray();

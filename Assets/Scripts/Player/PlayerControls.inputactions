@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ActivateAlmanac",
+                    "type": "Button",
+                    "id": "8a1643ef-c249-4d74-9bf1-7b92b7bd85e2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -219,12 +228,34 @@
                 },
                 {
                     "name": "",
+                    "id": "987c5e46-5a8f-4821-808e-23a93decccdf",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "915966b7-dc5c-4608-ab36-132390ecda77",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ActivateEvent",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a69545c3-6d6d-4497-b449-122f95aba76d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActivateAlmanac",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -253,6 +284,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Almanac",
+            "id": "03572d93-73cb-4156-b54e-b0ed250eeba6",
+            "actions": [
+                {
+                    "name": "CloseAlmanac",
+                    "type": "Button",
+                    "id": "c9602967-e87e-4844-8481-490d668dd4df",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "684c251d-18d1-42ab-9d3d-b4d75e0da175",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CloseAlmanac",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

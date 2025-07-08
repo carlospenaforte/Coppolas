@@ -12,12 +12,14 @@ public class DetonatorL1 : InputEvent
         }
     }
 
+    protected override void ResetVariables()
+    {
+        doorExploded = false;
+    }
+
     protected override void FinishEvent()
     {
-        inputField.interactable = true;
-        controls.Enable("gameplay");
-        inputBox.SetActive(false);
-        inputField.text = "";
+        base.FinishEvent();
 
         if (acepted)
             doorExploded = true;

@@ -9,10 +9,11 @@ public abstract class TextEvent : Event
 
     protected abstract string GetDialogueText();
 
-    protected void Start()
+    protected override void Start()
     {
+        base.Start();
+        
         talkTime = 0.25f;
-        controls = InputManager.GetInstance();
         box = Instantiate(dialogueBoxPrefab);
         box.SetActive(false);
         dialogue = box.GetComponentInChildren<TextMeshProUGUI>();
@@ -21,9 +22,10 @@ public abstract class TextEvent : Event
 
     protected void Update()
     {
-        if (playerInside && controls.ActivateEvent() && timer <= 0f)
+        if (playerInside && controls.ActivateEvent() && timer <= 0f || activateEvent)
         {
             timer = talkTime;
+            activateEvent = false;
             controls.Enable("event");
             box.SetActive(true);
         }

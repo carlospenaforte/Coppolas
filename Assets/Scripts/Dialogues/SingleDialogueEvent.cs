@@ -6,6 +6,7 @@ public class SingleDialogueEvent : DialogueEvent
         {
             controls.Enable("event");
             box.SetActive(true);
+            activateEvent = false;
         }
         else if (i == limit)
         {
