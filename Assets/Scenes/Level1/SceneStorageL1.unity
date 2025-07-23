@@ -3933,7 +3933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4951179fbfa7c3e4baf8bbbebb5dc912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBoxPrefab: {fileID: 9007508612380907675, guid: e7ec33265b5721d47ab72b0089de6053, type: 3}
+  dialogueBoxPrefab: {fileID: 563217372398959286, guid: b44757933325ada4bbca382977c0fafc, type: 3}
 --- !u!58 &287564086
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4369,7 +4369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db1e0a6dce92ee44a8323319ab9c7b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputBoxPrefab: {fileID: 6524918907634219126, guid: 62ec479e2c82f2b459a21c8e121d50ad, type: 3}
+  inputBoxPrefab: {fileID: 5297010203754987890, guid: 345e59f617dbad1419f5b02d26e9b63f, type: 3}
 --- !u!212 &546080458
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-public class CircularDialogueEvent : DialogueEvent
+public abstract class CircularDialogueEvent : DialogueEvent
 {
     protected override void Talk()
     {
@@ -16,6 +16,7 @@ public class CircularDialogueEvent : DialogueEvent
             return;
         }
 
+        
         dialogue.text = characters[i] + scripts[i];
         timer = talkTime;
         ++i;

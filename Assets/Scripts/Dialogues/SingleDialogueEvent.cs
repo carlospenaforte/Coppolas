@@ -1,4 +1,6 @@
-public class SingleDialogueEvent : DialogueEvent
+using UnityEngine;
+
+public abstract class SingleDialogueEvent : DialogueEvent
 {
     protected override void Talk()
     {

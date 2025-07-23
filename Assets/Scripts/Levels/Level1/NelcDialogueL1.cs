@@ -6,17 +6,15 @@ public class NelcDialogueL1 : MonoBehaviour
     public SingleDialogueEvent dialogueBox;
     public Rigidbody2D rb;
     public Animator anim;
+    public PlayerMovement mov;
 
-    private static bool destroyObject = false;
-    private bool firstLoop = false, thirdLoop = false;
+    private bool destroyObject = false, firstLoop = false, thirdLoop = false, change = true;
     private InputManager controls;
 
     private void Awake()
     {
-        if (destroyObject)
-            Destroy(anton);
-
         controls = InputManager.GetInstance();
+        StartWalking();
     }
 
     private void Update()
@@ -37,10 +35,31 @@ public class NelcDialogueL1 : MonoBehaviour
             {
                 rb.linearVelocity = Vector2.up * 8;
             }
+            else if (anton.transform.position.x > -2.5f)
+            {
+                if (change)
+                {
+                    anim.Play("Walk left");
+                    change = false;
+                }
+
+                rb.linearVelocity = Vector2.left * 8;
+            }
+            else if (anton.transform.position.y < 7.5f)
+            {
+                if (!change)
+                {
+                    anim.Play("Walk up");
+                    change = true;
+                }
+
+                rb.linearVelocity = Vector2.up * 8;
+            }
             else
             {
                 firstLoop = false;
                 anim.SetBool("IsWalking", false);
+                anim.Play("Idle down");
                 dialogueBox.SetActivateEvent(true);
             }
         }
@@ -60,13 +79,34 @@ public class NelcDialogueL1 : MonoBehaviour
     {
         if (thirdLoop)
         {
-            if (anton.transform.position.y > -2)
+            if (anton.transform.position.y > 4)
             {
+                rb.linearVelocity = Vector2.down * 8;
+            }
+            else if (anton.transform.position.x < 0)
+            {
+                if (change)
+                {
+                    anim.Play("Walk right");
+                    change = false;
+                }
+
+                rb.linearVelocity = Vector2.right * 8;
+            }
+            else if (anton.transform.position.y > 0)
+            {
+                if (!change)
+                {
+                    anim.Play("Walk down");
+                    change = true;
+                }
+
                 rb.linearVelocity = Vector2.down * 8;
             }
             else
             {
                 controls.Enable("gameplay");
+                mov.UnlockMovement();
                 destroyObject = true;
             }
         }

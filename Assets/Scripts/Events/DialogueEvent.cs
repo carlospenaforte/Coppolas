@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -22,7 +23,7 @@ public abstract class DialogueEvent : Event
         scripts = DialogueParser.GetScripts();
         limit = characters.Length;
 
-        talkTime = 1f;
+        talkTime = 0.25f;
         box = Instantiate(dialogueBoxPrefab);
         box.SetActive(false);
         dialogue = box.GetComponentInChildren<TextMeshProUGUI>();

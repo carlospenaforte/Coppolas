@@ -16,7 +16,7 @@ public abstract class TutorialEvent : Event
     {
         base.Start();
 
-        talkTime = 1f;
+        talkTime = 0.25f;
         messages = GetMessages();
         limit = messages.Length;
         box = Instantiate(dialogueBoxPrefab);
