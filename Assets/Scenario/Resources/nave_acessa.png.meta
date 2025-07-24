@@ -129,10 +129,10 @@ TextureImporter:
       name: nave_acessa_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 7
+        y: 4
+        width: 114
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

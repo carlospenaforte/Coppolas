@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: neonSign1_1
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 2955382046755637259, guid: bc6120c227a81fc409570b297a6e7438, type: 3}
+  - {fileID: -5005484470538622118, guid: 55b8b2c466a65df4cad43cb0d79dc05e, type: 3}
+  - {fileID: -5105227883927132006, guid: 272915c67afd0234ebb5c7f0b59fe085, type: 3}
+  - {fileID: 8539817398779431613, guid: ea099adb1b4b331408b8bf276eec2965, type: 3}
+  - {fileID: 6778086997299840425, guid: 86b820b6b62697a41a225e445b5c731b, type: 3}
+  - {fileID: 3036976037672119667, guid: b7b1a488c55afb947b1dd1fdd7e6290d, type: 3}
+  - {fileID: 5211377039609179199, guid: 6f629eca0378ae049bbdfb120463e854, type: 3}
+  - {fileID: -8811651780670909434, guid: e2f45d69489a02a438eb4ab2e1d9caf3, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0
